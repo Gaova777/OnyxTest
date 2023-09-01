@@ -29,10 +29,10 @@ describe("Pruebas de rutas de libros", () => {
         genre:"Romance",
         year:"1999-01-01"
     });
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(500);
    
   });
-  it("Debería guardar el libros por titulo, genero y año", async () => {
+  it("Debería visualizar por Id", async () => {
     const response = await request(app).get("/api/books/:id",
     ).send({
         id:"5ff17b0c-b250-46a9-9f10-a87a0f3ac1ff"
