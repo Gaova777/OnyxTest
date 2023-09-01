@@ -44,7 +44,8 @@ export default class BookService {
   }
 
   async update({ id, body }) {
-    return (
+  
+    return await handleCall(
       async () =>
         (
           await axios.patch(`${this.API_URL}/${id}`, body)

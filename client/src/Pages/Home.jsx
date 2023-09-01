@@ -165,8 +165,8 @@ function Home() {
     }
   };
 
-  const onUpdateBook = async (event) => {
-    event.preventDefault();
+  const onUpdateBook = async () => {
+  
     const { status, data } = await $BookService.update({
       id: Id,
       body: {
@@ -216,15 +216,15 @@ function Home() {
     }
   };
 
-  const onFindBook = async (event) => {
-    event.preventDefault()
+  const onFindBook = async () => {
+ 
     const { status, data } = await $BookService.query({
       title: dataSearch.title,
     });
 
     if (status) {
       setDataBookQuery(data);
-      setShowModal('search-data')
+    
       // Add to the list
     } else {
       setFeedback({
@@ -493,7 +493,7 @@ function Home() {
         }}
         fullWidth
       >
-        <DialogTitle>Creación de Libro</DialogTitle>
+        <DialogTitle>Actualizaciòn del Libro</DialogTitle>
         <DialogContent>
           <Box
             display="flex"
